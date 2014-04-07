@@ -17,7 +17,7 @@ usage () {
  Arguments:
    set [NAME]      - Set variables for current user session. Current variables 
                      are backuped.
-   unset           - Restore backuped variables for current user session.
+   unset [NAME]    - Restore backuped variables for current user session.
 
    enable [NAME]   - Enable using Bash-Prompt variables in user .bashrc file.
                      Current variables are backuped in .bashrc file.
