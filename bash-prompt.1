@@ -3,7 +3,7 @@
 bash-prompt \- colorize bash prompt for users and groups
 
 .SH SYNOPSIS
-.B bash\-prompt {\-\-set | \-\-unset}
+.B bash\-prompt {\-\-set | \-\-unset} [NAME]
 
 .B bash\-prompt {\-\-enable | \-\-disable} [\-\-group] [NAME]
 
@@ -26,7 +26,7 @@ set variables for user \fINAME\fR in current user session.
 .IP
 Current variables \fBPS1\fR and \fBPROMPT_COMMAND\fR are backed up.
 .TP
-\fB\-\-unset\fR
+\fB\-\-unset\fR [\fINAME\fR]
 restore backuped variables in current user session.
 .TP
 \fB\-\-enable\fR [\fINAME\fR]
@@ -37,7 +37,7 @@ Current variables \fBPS1\fR and \fBPROMPT_COMMAND\fR are backed up in users' .ba
 \fB\-\-disable\fR [\fINAME\fB]
 disable using Bash\-Prompt variables in user's .bashrc file.
 .IP
-Variables are restored in user's .bashrc file.
+Affected variables are restored in a user's .bashrc file.
 .TP
 \fINAME\fB
 system user or group name.
@@ -87,15 +87,4 @@ enable | disable system \- Enable or disable setting Bash\-Prompt variables
 .IP
 in system bashrc file and skeleton files.
 You should be superuser.
-.SH "SEE ALSO"
-The full documentation for
-.B bash-prompt.sh
-is maintained as a Texinfo manual.  If the
-.B info
-and
-.B bash-prompt.sh
-programs are properly installed at your site, the command
-.IP
-.B info bash-prompt.sh
-.PP
-should give you access to the complete manual.
+
