@@ -1,0 +1,49 @@
+bash-prompt (2.1-1) stable; urgency=low
+
+  * Added preinst script for smooth upgrade
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Tue, 30 Oct 2012 10:36:56 +0600
+
+bash-prompt (2.0-2) stable; urgency=low
+
+  * Fixed Bug #1068560
+  * Fixed Bug #956829
+  * Closed #944163
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Fri, 26 Oct 2012 12:44:21 +0600
+
+bash-prompt (2.0-1) stable; urgency=low
+
+  * New configuration file bash-prompt.config
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Wed, 01 Dec 2010 17:56:14 +0500
+
+bash-prompt (1.0-6) stable; urgency=low
+
+  * uptime with timezone
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Thu, 10 Jun 2010 13:15:55 +0600
+
+bash-prompt (1.0-4) stable; urgency=low
+
+   * PS for non-KONSOLE is fixed
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Wed, 05 Aug 2009 18:47:54 +0600
+
+bash-prompt (1.0-3) stable; urgency=low
+
+  * Change some prompts
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Mon, 10 Sep 2008 10:23:15 +0600
+
+bash-prompt (1.0-2) stable; urgency=low
+
+  * Minor bugs fixed
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Mon, 10 Sep 2008 10:23:15 +0600
+
+bash-prompt (1.0-1) stable; urgency=low
+
+  * Initial release
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Mon, 09 Sep 2008 19:00:00 +0600

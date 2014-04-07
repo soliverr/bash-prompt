@@ -1,0 +1,101 @@
+.TH BASH-PROMPT "1" "August 2013" "bash-prompt" "User Commands"
+.SH NAME
+bash-prompt \- colorize bash prompt for users and groups
+
+.SH SYNOPSIS
+.B bash\-prompt {\-\-set | \-\-unset}
+
+.B bash\-prompt {\-\-enable | \-\-disable} [\-\-group] [NAME]
+
+.B bash\-prompt {\-\-enable | \-\-disable} system
+
+.SH DESCRIPTION
+.PP
+\fBbash\-prompt\fR contains two sripts to set \fBPS1\fR and \fBPROMPT_COMMAND\fR bash's variables.
+This two variables can be configured through \fIbash-prompt.config\fR file for users and
+groups. \fBPROMPT_COMMAND\fR variable can set the escape characters so that KONSOLE tabs get set dynamically.
+.PP
+Some examples for bash's variables can be found in \fBEXAMPLES\fR section.
+.PP
+There is helpfull script named \fBbash\-prompt\fR to control set or unset bash's variables.
+.PP
+Arguments for \fBbash\-prompt\fR script:
+.TP
+\fB\-\-set\fR [\fINAME\fR]
+set variables for user \fINAME\fR in current user session.
+.IP
+Current variables \fBPS1\fR and \fBPROMPT_COMMAND\fR are backed up.
+.TP
+\fB\-\-unset\fR
+restore backuped variables in current user session.
+.TP
+\fB\-\-enable\fR [\fINAME\fR]
+enable using system configured variables from \fIbash-prompt.config\fR file in user's .bashrc file.
+.IP
+Current variables \fBPS1\fR and \fBPROMPT_COMMAND\fR are backed up in users' .bashrc file.
+.TP
+\fB\-\-disable\fR [\fINAME\fB]
+disable using Bash\-Prompt variables in user's .bashrc file.
+.IP
+Variables are restored in user's .bashrc file.
+.TP
+\fINAME\fB
+system user or group name.
+.IP
+Default is current user.
+.TP
+\fB\-\-group\fR
+if specified, than \fINAME\fR is a system group name.
+.IP
+enable | disable system \- Enable or disable setting Bash\-Prompt variables
+.IP
+in system bashrc file and skeleton files.
+You should be superuser.
+.IP
+\&./bash\-prompt.sh {\-\-set | \fB\-\-unset\fR}
+\&./bash\-prompt.sh {\-\-enable | \fB\-\-disable\fR} [\-\-group] [NAME]
+\&./bash\-prompt.sh {\-\-enable | \fB\-\-disable\fR} system
+.IP
+Control usage of Bash\-Prompt variables: PS1 and PROMPT_COMMAND
+.IP
+Arguments:
+.TP
+set [NAME]
+\- Set variables for current user session. Current variables
+.IP
+are backuped.
+.TP
+unset [NAME]
+\- Restore backuped variables for current user session.
+.TP
+enable [NAME]
+\- Enable using Bash\-Prompt variables in user .bashrc file.
+.IP
+Current variables are backuped in .bashrc file.
+.TP
+disable [NAME]
+\- Disable using Bash\-Prompt variables in user .bashrc file.
+.IP
+Variables are restored in .bashrc file.
+.TP
+NAME
+\- user name. If \fB\-\-group\fR is specified, NAME is a group name.
+.IP
+Default is current user.
+.IP
+enable | disable system \- Enable or disable setting Bash\-Prompt variables
+.IP
+in system bashrc file and skeleton files.
+You should be superuser.
+.SH "SEE ALSO"
+The full documentation for
+.B bash-prompt.sh
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B bash-prompt.sh
+programs are properly installed at your site, the command
+.IP
+.B info bash-prompt.sh
+.PP
+should give you access to the complete manual.

@@ -1,0 +1,36 @@
+#! /bin/bash
+
+config=bash-prompt.config
+
+# Set PS1 for some colourful terminals
+case "$TERM" in
+  xterm*|rxvt*|screen|linux)
+    source $config
+
+    uname="$(id --user --name | tr [:lower:] [:upper:])"
+
+    # Get PS1 for USER
+    uname_ps1=`set | sed -ne "s/USER_${uname}_PS1='\(.*\)'/\1/p" | head -1`
+
+    # Get PS1 for GROUP
+    if [ -z "$uname_ps1" ] ; then
+      gnames="$(id --groups --name | tr [:lower:] [:upper:])"
+      for uname in $gnames ; do
+        uname_ps1=`set | sed -ne "s/GROUP_${uname}_PS1='\(.*\)'/\1/p" | head -1`
+        [ -n "$uname_ps1" ] && break
+      done
+    fi
+
+    # Get default PS1
+    [ -z "$uname_ps1" ] && uname_ps1=`set | sed -ne "s/DEFAULT_PS1='\(.*\)'/\1/p" | head -1`
+
+    # Set PS1
+    [ ! -z "$uname_ps1" ] && PS1="$uname_ps1"
+
+    # Unset variables
+    # FIXME: it is may be very long string
+    var="`set | sed -ne 's/^\(\(USER\|DEFAULT\|GROUP\)_.*\(PS1\|\(PROMPT_\(BASH\|KONSOLE\)\)\)\)=.*/\1/p' | sed -e ':a;N;$!ba;s/\n/ /g'`"
+    unset $var
+    unset var uname uname_ps1 gnames
+  ;;
+esac

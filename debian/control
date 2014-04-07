@@ -1,0 +1,16 @@
+Source: bash-prompt
+Section: misc
+Priority: extra
+Maintainer: Kryaczevskih Sergey <soliverr@gmail.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: bash-prompt
+Architecture: all
+Depends: bash
+Description: Colorise bash prompt.
+ This package contains two sripts to set PS1 and PROMPT_COMMAND bash's variables.
+ This two variables can be configured through bash-prompt.config file for users and
+ groups. PROMPT_COMMAND variable can set the escape characters so that KONSOLE tabs
+ get set dynamically.
+ .

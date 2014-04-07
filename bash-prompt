@@ -1,0 +1,63 @@
+#!/bin/bash
+
+config=bash-prompt.config
+
+case "$TERM" in
+  xterm*|rxvt*|screen)
+    source $config
+
+    if [ "`id -gn`" = "`id -un`" -a `id -u` -gt 99 ]; then
+      COLOR=$DEFAULT_COLOR
+    else
+      COLOR=$SYSTEM_COLOR
+    fi
+
+    uname="$(id --user --name | tr [:lower:] [:upper:])"
+
+    # Get PROMPT_COMMAND for USER
+    uname_prompt=`set | sed -ne "s/USER_${uname}_PROMPT_BASH='\(.*\)'/\1/p" | head -1`
+
+    # Get PROMPT_BASH for GROUP
+    if [ -z "$uname_prompt" ] ; then
+      gnames="$(id --groups --name | tr [:lower:] [:upper:])"
+      for uname in $gnames ; do
+        uname_prompt=`set | sed -ne "s/GROUP_${uname}_PROMPT_BASH='\(.*\)'/\1/p" | head -1`
+        [ -n "$uname_prompt" ] && break
+      done
+    fi
+
+    # Get default PROMPT_BASH
+    [ -z "$uname_prompt" ] && uname_prompt=`set | sed -ne "s/DEFAULT_PROMPT_BASH='\(.*\)'/\1/p" | head -1`
+
+    if [ ! -z "$uname_prompt" ] ; then
+      # Set colourful tab for KONSOLE
+      if [ $(set | grep '^KONSOLE' | wc -l) -gt 0 ] ; then
+        # Get PROMPT_KONSOLE for USER
+        uname_konsole=`set | sed -ne "s/USER_${uname}_PROMPT_KONSOLE='\(.*\)'/\1/p" | head -1`
+
+        # Get PROMPT_KONSOLE for GROUP
+        if [ -z "$uname_konsole" ] ; then
+          gnames="$(id --groups --name | tr [:lower:] [:upper:])"
+          for uname in $gnames ; do
+            uname_konsole=`set | sed -ne "s/GROUP_${uname}_PROMPT_KONSOLE='\(.*\)'/\1/p" | head -1`
+            [ -n "$uname_konsole" ] && break
+          done
+        fi
+
+        # Get default PROMPT_KONSOLE
+        [ -z "$uname_konsole" ] && uname_konsole=`set | sed -ne "s/DEFAULT_PROMPT_KONSOLE='\(.*\)'/\1/p" | head -1`
+      fi
+      # FIXME: How to expand variables without starting new bash shell ?
+      echo -ne `eval "echo \"${uname_prompt}${uname_konsole}\""`
+    fi
+    
+    # Unset variables
+    # FIXME: it is may be very long string
+    var="`set | sed -ne 's/^\(\(USER\|DEFAULT\|GROUP\)_.*\(PS1\|\(PROMPT_\(BASH\|KONSOLE\)\)\)\)=.*/\1/p' | sed -e ':a;N;$!ba;s/\n/ /g'`"
+    unset $var
+    unset var uname uname_prompt uname_konsole gnames
+  ;;
+  *)
+      echo -ne ""
+  ;;
+esac
