@@ -56,21 +56,19 @@ rm -rf %{buildroot}
 - Added preinst script for smooth upgrade
 
 * Fri Oct 26 2012 Kryazhevskikh Sergey <soliverr@gmail.com> 2.0-2  12:44:21 +0600
-- Fixed Bug #1068560
-- Fixed Bug #956829
-- Closed #944163
+- New upstream version
 
 * Wed Dec 01 2010 Kryazhevskikh Sergey <soliverr@gmail.com> 1.0-7  17:56:14 +0500
-- New configuration file bash-prompt.config
+- New upstream version
 
 * Thu Jun 10 2010 Kryazhevskikh Sergey <soliverr@gmail.com> 1.0-6  13:15:55 +0600
-- uptime with timezone
+- New upstream version
 
 * Wed Dec 16 2009 Kryazhevskikh Sergey <soliverr@gmail.com> 1.0-5  12:03:29
-- Removed noreplace in bash-prompt-xterm
+- New upstream version
 
 * Wed Aug 05 2009 Kryazhevskikh Sergey <soliverr@gmail.com> 1.0-4  18:47:54
-- PS for non-KONSOLE is fixed
+- New upstream version
 
 * Mon Sep 10 2008 Kryaczevskih Sergey <soliverr@gmail.com>
 - Minor bugs fixed

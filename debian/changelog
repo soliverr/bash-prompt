@@ -6,33 +6,32 @@ bash-prompt (2.1-1) stable; urgency=low
 
 bash-prompt (2.0-2) stable; urgency=low
 
-  * Fixed Bug #1068560
-  * Fixed Bug #956829
-  * Closed #944163
+  * New upstream version
 
  -- Kryazhevskikh Sergey <soliverr@gmail.com>  Fri, 26 Oct 2012 12:44:21 +0600
 
 bash-prompt (2.0-1) stable; urgency=low
 
-  * New configuration file bash-prompt.config
+  * New upstream version
 
  -- Kryazhevskikh Sergey <soliverr@gmail.com>  Wed, 01 Dec 2010 17:56:14 +0500
 
 bash-prompt (1.0-6) stable; urgency=low
 
-  * uptime with timezone
+  * New upstream version
+  * New configuration file bash-prompt.config
 
  -- Kryazhevskikh Sergey <soliverr@gmail.com>  Thu, 10 Jun 2010 13:15:55 +0600
 
 bash-prompt (1.0-4) stable; urgency=low
 
-   * PS for non-KONSOLE is fixed
+  * New upstream version
 
  -- Kryazhevskikh Sergey <soliverr@gmail.com>  Wed, 05 Aug 2009 18:47:54 +0600
 
 bash-prompt (1.0-3) stable; urgency=low
 
-  * Change some prompts
+  * New upstream version
 
  -- Kryazhevskikh Sergey <soliverr@gmail.com>  Mon, 10 Sep 2008 10:23:15 +0600
 

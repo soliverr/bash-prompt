@@ -1,0 +1,27 @@
+2014-04-07  Kryazhevskikh Sergey  <soliverr@gmail.com>
+
+    * Project moved from launchpad.net to github.com
+
+2012-10-26  Kryazhevskikh Sergey  <soliverr@gmail.com>
+
+    * Fixed LaunchPad Bug #1068560
+    * Fixed LaunchPad Bug #956829
+    * Closed LaunchPad Issue #944163
+
+2010-12-01  Kryazhevskikh Sergey  <soliverr@gmail.com>
+
+    * New configuration file bash-prompt.config
+
+
+2010-06-10  Kryazhevskikh Sergey  <soliverr@gmail.com>
+
+    * uptime with timezone
+
+2009-08-05  Kryazhevskikh Sergey  <soliverr@gmail.com>
+
+    * PS for non-KONSOLE is fixed
+
+2008-09-10  Kryazhevskikh Sergey  <soliverr@gmail.com>
+
+  * Change some prompts
+
