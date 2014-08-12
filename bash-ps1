@@ -7,7 +7,7 @@ case "$TERM" in
   xterm*|rxvt*|screen|linux)
     source $config
 
-    uname="$(id --user --name | tr [:lower:] [:upper:])"
+    uname="$(id --user --name | tr [:lower:] [:upper:] | tr '\\+-.,?!$' '_' | tr -s '_')"
 
     # Get PS1 for USER
     uname_ps1=`set | sed -ne "s/USER_${uname}_PS1='\(.*\)'/\1/p" | head -1`

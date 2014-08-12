@@ -12,7 +12,7 @@ case "$TERM" in
       COLOR=$SYSTEM_COLOR
     fi
 
-    uname="$(id --user --name | tr [:lower:] [:upper:])"
+    uname="$(id --user --name | tr [:lower:] [:upper:] | tr '\\+-.,?!$' '_' | tr -s '_')"
 
     # Get PROMPT_COMMAND for USER
     uname_prompt=`set | sed -ne "s/USER_${uname}_PROMPT_BASH='\(.*\)'/\1/p" | head -1`
