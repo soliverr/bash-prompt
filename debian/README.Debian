@@ -6,7 +6,7 @@ PROMPT_COMMAND here.
 
 Don't forget comment PS1 and/or PROMPT_COMMAND in users .bashrc files.
 
-Debian has no /etc/profile.d directory, therefore this package try to modify /etc/profile
-in installation process 
+Old Debian distributions has no /etc/profile.d directory, therefore this package try 
+to modify /etc/profile in installation process.
 
  -- Sergey Kryazhevskikh <soliverr@gmail.com>

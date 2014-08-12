@@ -1,3 +1,9 @@
+bash-prompt (2.1-2) stable; urgency=low
+
+  * New upstream release
+
+ -- Kryazhevskikh Sergey <soliverr@gmail.com>  Tue, 12 Aug 2014 17:27:40 +0600
+
 bash-prompt (2.1-1) stable; urgency=low
 
   * Added preinst script for smooth upgrade

@@ -3,7 +3,7 @@ Summary: Sets bash's PS1 & PROMPT_COMMAND variables
 Summary(ru_RU.UTF-8): Установить переменные PS1 и PROMPT_COMMAND для BASH
 Name: bash-prompt
 Version: 2.1
-Release: 1
+Release: 2
 License: GPL
 Group: System Environment/Shells
 Source: %{name}-%{version}.tar.gz
@@ -52,6 +52,9 @@ rm -rf %{buildroot}
 /etc/profile.d/bash-ps1.sh
 
 %changelog
+* Tue Aug 12 2014 Kryazhevskikh Sergey <soliverr@gmail.com> 2.1-2  17:27:40 +0600
+- New upstream release
+
 * Tue Oct 30 2012 Kryazhevskikh Sergey <soliverr@gmail.com> 2.1-1  10:36:56 +0600
 - Added preinst script for smooth upgrade
 

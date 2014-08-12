@@ -19,25 +19,32 @@ set -e
 
 _write_debian_profiles() {
 
-  if ! grep -q -s '^# Added by bash-prompt package #' /etc/profile ; then
-    cat << __EOFF__ >> /etc/profile
+    if [ ! -d /etc/profile.d ] ; then
+        if ! grep -q -s '^# Added by bash-prompt package #' /etc/profile ; then
+            cat << __EOFF__ >> /etc/profile
 # Added by bash-prompt package #
 #
 # Enable bash prompt command
 PROMPT_COMMAND=/etc/default/bash-prompt
 # bash-prompt package #
 __EOFF__
-  fi
+        fi
+    else
+        cat << __EOFF__ > /etc/profile.d/bash-prompt.sh
+# Enable bash prompt command
+PROMPT_COMMAND=/etc/default/bash-prompt
+__EOFF__
+    fi
 
-  if ! grep -q -s '^# Added by bash-prompt package #' /etc/bash.bashrc ; then
-    cat << __EOFF__ >> /etc/bash.bashrc
+    if ! grep -q -s '^# Added by bash-prompt package #' /etc/bash.bashrc ; then
+        cat << __EOFF__ >> /etc/bash.bashrc
 # Added by bash-prompt package #
 #
 # Enable colorized bash PS
 . /etc/default/bash-ps1
 # bash-prompt package #
 __EOFF__
-  fi
+    fi
 }
 
 case "$1" in
