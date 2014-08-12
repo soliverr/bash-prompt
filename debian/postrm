@@ -43,6 +43,7 @@ case "$1" in
     ;;
 
     purge)
+       _unwrite_debian_profiles
     ;;
 
     *)
