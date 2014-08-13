@@ -1,7 +1,7 @@
 This package contains two scripts - one is to set PS1 and second is to set 
 PROMPT_COMMAND bash's variables.
 
-Values of this two variables can be configured through bash-prompt.config file. Its can
+Values of this two variables can be configured through bash-prompt.config file. It can
 be configured for special users or user's group. Default values can be supplied also.
 
 It can be configured escape characters  so that KONSOLE tabs get set dynamically.
