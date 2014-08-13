@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-# Control script for Bash-Prompt variables: Ps1 and PROMPT_COMMAND
+# Control script for Bash-Prompt variables: PS1 and PROMPT_COMMAND
 #
 config=/etc/default/bash-ps1
 

@@ -57,6 +57,7 @@ install: build
 	install -m 0755 bash-prompt debian/bash-prompt/etc/default/
 	install -m 0644 bash-prompt.config debian/bash-prompt/etc/default/
 	install -m 0755 bash-ps1 debian/bash-prompt/etc/default/
+	install -m 0755 -D bash-prompt.sh debian/bash-prompt/usr/bin/bash-prompt
 	sed --in-place -e 's#config=bash-prompt.config#config=/etc/default/bash-prompt.config#' debian/bash-prompt/etc/default/bash-prompt
 	sed --in-place -e 's#config=bash-prompt.config#config=/etc/default/bash-prompt.config#' debian/bash-prompt/etc/default/bash-ps1
 

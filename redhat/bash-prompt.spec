@@ -3,7 +3,7 @@ Summary: Sets bash's PS1 & PROMPT_COMMAND variables
 Summary(ru_RU.UTF-8): Установить переменные PS1 и PROMPT_COMMAND для BASH
 Name: bash-prompt
 Version: 2.1
-Release: 2
+Release: 3
 License: GPL
 Group: System Environment/Shells
 Source: %{name}-%{version}.tar.gz
@@ -35,7 +35,9 @@ rm -rf %{buildroot}
 %{__install} -d %{buildroot}/etc/profile.d
 %{__install} -m 0755 bash-prompt %{buildroot}/etc/sysconfig/bash-prompt-xterm
 %{__install} -m 0755 bash-ps1 %{buildroot}/etc/profile.d/bash-ps1.sh
+%{__install} -m 0755 -D bash-prompt.sh %{buildroot}/usr/bin/bash-prompt
 %{__install} -m 0644 bash-prompt.config %{buildroot}/etc/sysconfig/bash-prompt.config
+%{__install} -m 0644 -D bash-prompt.1 %{buildroot}/usr/share/man/man1/bash-prompt.1
 
 %{__sed} --in-place -e 's#config=bash-prompt.config#config=/etc/sysconfig/bash-prompt.config#' %{buildroot}/etc/sysconfig/bash-prompt-xterm
 %{__sed} --in-place -e 's#config=bash-prompt.config#config=/etc/sysconfig/bash-prompt.config#' %{buildroot}/etc/profile.d/bash-ps1.sh
@@ -47,11 +49,17 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 %doc README
 %doc COPYING
+%doc /usr/share/man/man1/bash-prompt.1.gz
 %config /etc/sysconfig/bash-prompt-xterm
 %config /etc/sysconfig/bash-prompt.config
 /etc/profile.d/bash-ps1.sh
+/usr/bin/bash-prompt
 
 %changelog
+* Wed Aug 13 2014 Kryazhevskikh Sergey <soliverr@gmail.com> 2.1-3  10:27:20 +0600
+- Install bash-prompt.sh into /usr/bin/bash-prompt
+- Install bash-prompt.1 man page
+
 * Tue Aug 12 2014 Kryazhevskikh Sergey <soliverr@gmail.com> 2.1-2  17:27:40 +0600
 - New upstream release
 
