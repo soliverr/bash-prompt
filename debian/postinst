@@ -33,6 +33,7 @@ __EOFF__
         cat << __EOFF__ > /etc/profile.d/bash-prompt.sh
 # Enable bash prompt command
 PROMPT_COMMAND=/etc/default/bash-prompt
+export PROMPT_COMMAND
 __EOFF__
     fi
 
