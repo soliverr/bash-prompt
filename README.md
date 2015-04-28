@@ -25,3 +25,7 @@ Ubuntu packages can be download from Launchpad:
     sudo apt-add-repository ppa:soliverr/ppa
     sudo aptitude update
     sudo aptitude install bash-prompt
+
+Some rpms can be downloaded from openSUSE Build Service:
+
+    http://download.opensuse.org/repositories/home:/soliverr/
